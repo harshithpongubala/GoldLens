@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #191919;
+    color: #F3F4F6;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom glassmorphism utilities matching Channel Analytics reference */
+.glass-shell {
+  background: radial-gradient(circle at 50% 0%, rgba(45, 45, 45, 0.5) 0%, rgba(26, 26, 26, 0.85) 100%), #1B1B1B;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(38, 38, 38, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.glass-pill {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-pill-orange {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.25) 0%, rgba(209, 177, 95, 0.3) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(234, 88, 12, 0.35);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #191919;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4B4B4B;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F5E09A 0%, #D1B15F 60%, #A68336 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle glow animations */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
